@@ -1,0 +1,73 @@
+<!-- <table class="container">
+
+    <thead>
+        <tr>
+          
+    <td  align="right">
+        <div  class="col-sm-3">
+        <input type="text"   
+       [(ngModel)]="searchString" placeholder="Search " class="form-control">
+      <label><b>Search</b></label>
+    </div>
+    </td>
+    </tr>
+                                
+    </thead>
+
+</table> -->
+<br>
+<div class="container">
+    <div class="sendbtn" style="height:40px">
+        <button type="button" (click)="sendCircular()" class="btn btn-info">Send</button>
+    </div>
+    <div align="center" class="circularbtn" style="height:40px">
+        <input type="text"   [(ngModel)]="circularData" placeholder="Circular " class="form-control">
+    </div>
+</div>
+
+<br>
+<div class="container">
+    <table class="table table-success table-striped">
+        <thead>
+            <tr>
+                <th>Parent Name</th>
+                <th>Student Name</th>
+                <th>Address</th>
+                <th>State</th>
+                <th>Country</th>
+                <th>City</th>
+                <th>Zip Code</th>
+                <th>Email Adderes</th>
+                <th>Primary Contact Person</th>
+                <th>Primary Contact Person Mobile No</th>
+                <th>Secondary Contact Person</th>
+                <th>Secondary Contact Person Mobile No</th>
+                <th>Action</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let studentData of  studentList">
+                <td>
+                    {{ studentData.parentName }}
+                </td>
+                <td>{{ studentData.studentName }}</td>
+                <td>{{ studentData.address }}</td>
+                <td>{{ studentData.state }}</td>
+                <td>{{ studentData.country }}</td>
+                <td>{{ studentData.city }}</td>
+                <td>{{ studentData.zipCode }}</td>
+                <td>{{ studentData.emailAddress }}</td>
+                <td>{{ studentData.primaryContactPerson }}</td>
+                <td>{{ studentData.primaryContactPersonMobileNo }}</td>
+                <td>{{ studentData.seconderyContactPerson }}</td>
+                <td>{{ studentData.secondoryContactPersonMobileNo }}</td>
+                <td> <button type="button" (click)="approve(studentData.registerId)"
+                        class="btn btn-info">Approve</button></td>
+                <td> <button type="button" (click)="rejected(studentData.registerId)"
+                        class="btn btn-danger">Reject</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
